@@ -1,0 +1,12 @@
+services:
+  app:
+    build: .
+    ports:
+      - "5001:5001"
+    environment:
+      - DEBUG=false
+      - PORT=5001
+      - LOG_FILE=/data/logs/logs.txt
+    volumes:
+      - ./data/logs:/data/log
+    restart: unless-stopped
